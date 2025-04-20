@@ -1,6 +1,12 @@
 import React from "react";
 
-function HeartIcon({ width = "", height= "", className = "", fill = "#EC1D24", style }) {
+function HeartIcon({
+  width = "",
+  height = "",
+  className = "",
+  fill = "#EC1D24",
+  style,
+}) {
   return (
     <svg
       className={className}

@@ -3,14 +3,14 @@
     height: auto;
     padding-left: 16px;
     gap: 16px;
-   display: grid;
+    display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding-right: 48px;
     padding-left: 48px;
-  
     
-    
-   
+
+
+
 }
 
 
@@ -22,8 +22,8 @@
         gap: 16px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-       
-       
+
+
     }
 
 

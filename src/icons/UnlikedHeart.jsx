@@ -1,6 +1,6 @@
 import React from "react";
 
-function UnlikedHeart({ width = "12", height = "10.84", className = ""}) {
+function UnlikedHeart({ width = "12", height = "10.84", className = "" }) {
   return (
     <svg
       className={className}

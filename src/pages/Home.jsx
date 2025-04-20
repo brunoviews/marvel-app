@@ -15,7 +15,9 @@ function Home({ likedCharacters, setLikedCharacters }) {
   );
 
   const displayedCharacters = showOnlyLiked
-    ? filteredCharacters.filter((character) => likedCharacters.includes(character.id))
+    ? filteredCharacters.filter((character) =>
+        likedCharacters.includes(character.id)
+      )
     : filteredCharacters;
 
   const [resultsCounter, setResultsCounter] = useState();
