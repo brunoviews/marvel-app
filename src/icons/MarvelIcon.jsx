@@ -1,6 +1,6 @@
 import React from "react";
 
-function MarvelIcon() {
+function MarvelIcon( onClick) {
 return (
     <svg
         width={130}

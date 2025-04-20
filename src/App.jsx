@@ -1,15 +1,18 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-
+import { useState } from "react";
 
 function App() {
+  // Añadido estado para personajes favoritos
+  const [likedCharacters, setLikedCharacters] = useState([]);
+
   return (
     <>
       <div className="main">
-        <Navbar />
-        <Home />
-        
+        <Home 
+          likedCharacters={likedCharacters}
+          setLikedCharacters={setLikedCharacters}
+        />
       </div>
     </>
   );
