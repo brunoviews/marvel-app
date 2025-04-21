@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CardHeart from "../icons/CardHeart";
 import UnlikedHeart from "../icons/UnlikedHeart";
 import "./CharacterCard.css";
+import { Link } from "react-router-dom";
 
 function CharacterCard({ character, likedCharacters, setLikedCharacters }) {
   const isLiked = likedCharacters.includes(character.id);
@@ -9,6 +10,7 @@ function CharacterCard({ character, likedCharacters, setLikedCharacters }) {
 
   const handleLikeClick = (e) => {
     e.stopPropagation();
+    e.preventDefault();
     if (isLiked) {
       setLikedCharacters(likedCharacters.filter(id => id !== character.id));
     } else {
@@ -17,6 +19,8 @@ function CharacterCard({ character, likedCharacters, setLikedCharacters }) {
   };
 
   return (
+    <>
+   <Link to={`/character/${character.id}`} style={{ textDecoration: 'none', cursor: 'pointer' }}>
     <div 
       className="marvel-card"
       onMouseEnter={() => setIsHovered(true)}
@@ -24,6 +28,7 @@ function CharacterCard({ character, likedCharacters, setLikedCharacters }) {
     >
       <img src={`${character.path}`} alt={character.name} />
       <div className="character-info">
+      
         <p className="character-name">{character.name}</p>
         <div onClick={handleLikeClick} style={{ cursor: 'pointer' }}>
           {isLiked ? (
@@ -39,6 +44,8 @@ function CharacterCard({ character, likedCharacters, setLikedCharacters }) {
       </div>
       <div className="cut-white"></div>
     </div>
+    </Link>
+    </>
   );
 }
 

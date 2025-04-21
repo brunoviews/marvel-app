@@ -1,14 +1,11 @@
-import React from "react";
 import "./Home.css";
 import SearchIcon from "../icons/SearchIcon";
 import CharacterList from "../components/CharacterList";
-import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 
-function Home({ likedCharacters, setLikedCharacters }) {
+function Home({ likedCharacters, setLikedCharacters, showOnlyLiked, setShowOnlyLiked }) {
   const [characters, setCharacters] = useState([]);
   const [searchCharacter, setSearchCharacter] = useState("");
-  const [showOnlyLiked, setShowOnlyLiked] = useState(false);
 
   const filteredCharacters = characters.filter((character) =>
     character.name.toLowerCase().includes(searchCharacter.toLowerCase())
@@ -36,18 +33,8 @@ function Home({ likedCharacters, setLikedCharacters }) {
       });
   }, []);
 
-  const handleFavClick = () => {
-    setShowOnlyLiked((prev) => !prev);
-  };
-
   return (
     <>
-      <Navbar
-        likesCount={likedCharacters.length}
-        onFavClick={handleFavClick}
-        favActive={showOnlyLiked}
-        onAllCharactersClick={() => setShowOnlyLiked(false)}
-      />
       <div className="search-bar-container">
         <div className="search-bar">
           <SearchIcon className="search-icon" />

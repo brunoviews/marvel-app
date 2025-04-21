@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 1512;
     height: 84px;
     padding-top: 16px;
     padding-bottom: 16px;
@@ -31,7 +31,11 @@
     padding: 8px;
     gap: 8px;
     align-items: center;
+}
 
+.fav.fav-active {
+    background: #EC1D24;
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 768px) {

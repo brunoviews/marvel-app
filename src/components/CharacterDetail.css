@@ -1,0 +1,232 @@
+/*Estilos generales*/
+@import "@fontsource/roboto-condensed";
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.character-detail-header-background {
+    width: 100%;
+    background: #000;
+    border-top: 1px solid #222;
+    padding: 0;
+    margin: 0;
+}
+
+.character-detail {
+    max-width: 1512px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #000;
+    min-height: 320px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.character-detail img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    background: #222;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+}
+
+.character-detail-header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    padding: 0 0 0 48px;
+    gap: 24px;
+    height: 320px;
+}
+
+.character-detail-header-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.character-detail-header-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.character-detail-header-title svg {
+    margin-left: 24px;
+}
+
+.character-description {
+    width: 100%;
+    margin: 0;
+}
+
+.character-description p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 600px;
+}
+
+.comic-section {
+    max-width: 1512px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+}
+
+.comic-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    color: #000;
+    text-transform: uppercase;
+    padding-left: 48px;
+}
+
+.comic-list {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    border-bottom: 4px solid #ededed;
+    padding-bottom: 16px;
+    position: relative;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.comic-list::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 48px;
+    bottom: -4px;
+    width: 20%;
+    min-width: 160px;
+    max-width: 400px;
+    height: 4px;
+    background: #e62429;
+}
+
+.comic-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 160px;
+}
+
+.comic-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    margin-bottom: 12px;
+    background: #fff;
+}
+
+.comic-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+    color: #000;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.comic-item h5 {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .character-detail {
+        flex-direction: column;
+        align-items: center;
+        min-height: unset;
+    }
+    .character-detail img {
+        width: 100vw;
+        max-width: 100%;
+        height: 320px;
+    }
+    .character-detail-header {
+        padding: 24px 16px 24px 16px;
+        width: 100%;
+        height: auto;
+    }
+    .comic-section h2,
+    .comic-list {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .comic-list::after {
+        left: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .character-detail-header-background {
+        padding: 0;
+    }
+    .character-detail {
+        flex-direction: column;
+        align-items: center;
+        min-height: unset;
+        width: 100%;
+    }
+    .character-detail img {
+        width: 100vw;
+        max-width: 100%;
+        height: 320px;
+    }
+    .character-detail-header {
+        padding: 24px 16px 24px 16px;
+        width: 100%;
+        height: auto;
+    }
+    .character-detail-header-title h2 {
+        font-size: 32px;
+    }
+    .comic-section {
+        padding: 0;
+    }
+    .comic-section h2,
+    .comic-list {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .comic-list {
+        gap: 16px;
+    }
+    .comic-list::after {
+        left: 16px;
+        min-width: 80px;
+        max-width: 200px;
+    }
+    .comic-item {
+        width: 120px;
+    }
+    .comic-item img {
+        height: 160px;
+    }
+}

@@ -1,31 +1,20 @@
 .character-list {
+    max-width: 1512px;
     width: 100%;
-    height: auto;
-    padding-left: 16px;
+    margin: 0 auto;
+    padding-right: 48px;
+    padding-left: 48px;
     gap: 16px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    padding-right: 48px;
-    padding-left: 48px;
-    
-
-
-
 }
-
 
 @media screen and (max-width: 768px) {
     .character-list {
+        max-width: 100%;
         width: 100%;
-        height: 2, 865.69px;
         padding-left: 16px;
-        gap: 16px;
-        display: grid;
+        padding-right: 16px;
         grid-template-columns: repeat(2, 1fr);
-
-
     }
-
-
-
 }
