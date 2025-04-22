@@ -21,12 +21,19 @@ function CharacterDetail() {
 
   if (!character) return null;
 
+  const comicsSorted = [...character.comics].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA; // Orden descendente (más recientes primero)
+  });
+
   return (
     <>
       {" "}
+     
       <div className="character-detail-header-background">
+        <img src={character.path} alt={character.name} />
         <div className="character-detail">
-          <img src={character.path} alt={character.name} />
           <div className="character-detail-header">
             <div className="character-detail-header-title">
               <h2>{character.name}</h2>
@@ -38,19 +45,23 @@ function CharacterDetail() {
           </div>
         </div>
       </div>
-
-      <div className="comic-section">
-        <h2>Comics</h2>
-        <div className="comic-list">
-          {character.comics.map((comic) => (
-            <div key={comic.id} className="comic-item">
-              <img src={comic.path} alt={comic.title} />
-              <h3>{comic.title}</h3>
-              <h5>{comic.date ? comic.date.slice(0, 4) : ""}</h5>
-            </div>
-          ))}
+      <div className="comic-section-container">
+        <div className="comic-section">
+          <div className="comic-section-title">
+            <h2>Comics</h2>
+          </div>
+          <div className="comic-list">
+            {comicsSorted.map((comic) => (
+              <div key={comic.id} className="comic-item">
+                <img src={comic.path} alt={comic.title} />
+                <h3>{comic.title}</h3>
+                <h5>{comic.date ? comic.date.slice(0, 4) : ""}</h5>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      
     </>
   );
 }

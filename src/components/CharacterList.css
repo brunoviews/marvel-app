@@ -2,8 +2,6 @@
     max-width: 1512px;
     width: 100%;
     margin: 0 auto;
-    padding-right: 48px;
-    padding-left: 48px;
     gap: 16px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -13,7 +11,7 @@
     .character-list {
         max-width: 100%;
         width: 100%;
-        padding-left: 16px;
+        padding-left: 8px;
         padding-right: 16px;
         grid-template-columns: repeat(2, 1fr);
     }

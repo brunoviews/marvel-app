@@ -3,7 +3,12 @@ import SearchIcon from "../icons/SearchIcon";
 import CharacterList from "../components/CharacterList";
 import { useEffect, useState } from "react";
 
-function Home({ likedCharacters, setLikedCharacters, showOnlyLiked, setShowOnlyLiked }) {
+function Home({
+  likedCharacters,
+  setLikedCharacters,
+  showOnlyLiked,
+  setShowOnlyLiked,
+}) {
   const [characters, setCharacters] = useState([]);
   const [searchCharacter, setSearchCharacter] = useState("");
 
@@ -35,23 +40,25 @@ function Home({ likedCharacters, setLikedCharacters, showOnlyLiked, setShowOnlyL
 
   return (
     <>
-      <div className="search-bar-container">
-        <div className="search-bar">
-          <SearchIcon className="search-icon" />
-          <input
-            type="text"
-            placeholder="SEARCH A CHARACTER..."
-            onChange={(e) => setSearchCharacter(e.target.value)}
+      <div className="main-container">
+        <div className="search-bar-container">
+          <div className="search-bar">
+            <SearchIcon className="search-icon" />
+            <input
+              type="text"
+              placeholder="SEARCH A CHARACTER..."
+              onChange={(e) => setSearchCharacter(e.target.value)}
+            />
+          </div>
+          <span className="results-counter">{resultsCounter} Results</span>
+        </div>
+        <div className="character-list-container">
+          <CharacterList
+            characters={displayedCharacters}
+            likedCharacters={likedCharacters}
+            setLikedCharacters={setLikedCharacters}
           />
         </div>
-        <span className="results-counter">{resultsCounter} Results</span>
-      </div>
-      <div className="character-list-container">
-        <CharacterList
-          characters={displayedCharacters}
-          likedCharacters={likedCharacters}
-          setLikedCharacters={setLikedCharacters}
-        />
       </div>
     </>
   );
